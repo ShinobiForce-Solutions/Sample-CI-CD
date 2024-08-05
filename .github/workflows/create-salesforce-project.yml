@@ -9,7 +9,8 @@ jobs:
   create-project-salesforce:
     runs-on: ubuntu-latest
     steps:
-    
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Check Project Already Exists
         run: |
           if [ -d "sample-project" ]; then
