@@ -12,6 +12,7 @@ jobs:
         with:
           repository: AcekBecek16/template-project-sf
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
       - name: Push the Repository
         run: |
           git remote set-url origin https://github.com/AcekBecek16/Repos-API-Testing.git
