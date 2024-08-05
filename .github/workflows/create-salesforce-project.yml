@@ -1,7 +1,7 @@
-name: "Create Project Salesforce"
+name: 'Create Project Salesforce'
 
-on: 
-  push:
+on:
+  pull_request:
     branches:
       - main
 
@@ -19,10 +19,10 @@ jobs:
           fi
       - name: Install Salesforce CLI
         run: npm install @salesforce/cli --global
-      
+
       - name: Create Project on Github
         run: sf project generate --name sample-project --template standard
-      
+
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
@@ -31,4 +31,3 @@ jobs:
           git add .
           git commit -m "Create Salesforce project"
           git push origin main
-  
