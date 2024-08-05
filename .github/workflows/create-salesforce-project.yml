@@ -27,7 +27,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          git add remote set-url origin https://x-access-token:${ACTION_PAT}@github.com/${{ github.repository }}
           git add .
           git commit -m "Create Salesforce project"
-          git push
+          git push origin main
   
